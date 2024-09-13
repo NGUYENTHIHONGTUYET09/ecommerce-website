@@ -28,9 +28,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <h1>Cửa Hàng Trực Tuyến</h1>
         <nav>
             <a href="index.php">Trang Chủ</a>
-            <a href="product.php">Sản Phẩm</a>
-            <a href="cart.php">Giỏ Hàng</a>
-            <a href="login.php">Đăng Nhập</a>
+            <a href="php/product.php">Sản Phẩm</a>
+            <a href="php/cart.php">Giỏ Hàng</a>
+            <a href="php/login.php">Đăng Nhập</a>
         </nav>
     </header>
 
@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <button type="submit">Đăng Ký</button>
             <?php if (isset($error)) echo '<p>' . $error . '</p>'; ?>
         </form>
-        <p>Đã có tài khoản? <a href="login.php">Đăng nhập ngay</a></p>
+        <p>Đã có tài khoản? <a href="php/login.php">Đăng nhập ngay</a></p>
     </main>
 
     <footer>

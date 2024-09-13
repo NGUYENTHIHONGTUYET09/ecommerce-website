@@ -1,0 +1,12 @@
+{
+    "mssql.connections": [
+        {
+            "server": "localhost",
+            "database": "ecommerce_db",
+            "authenticationType": "SqlLogin",
+            "user": "sa",
+            "password": "sa",
+            "group": "YourGroupName"
+        }
+    ]
+}

@@ -1,51 +1,51 @@
-<?php include('php/db.php'); ?>
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Trang Chủ - Bán Hàng</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Chủ - Ecommerce Website</title>
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/scripts.js" defer></script>
+    <script src="js/script.js" defer></script>
 </head>
 <body>
     <!-- Header -->
     <header>
-        <h1>Cửa Hàng Trực Tuyến</h1>
         <nav>
-            <!-- Điều hướng đến các trang khác -->
-            <a href="index.php">Trang Chủ</a> <!-- Liên kết đến chính trang hiện tại -->
-            <a href="php/product.php">Sản Phẩm</a> <!-- Liên kết đến trang sản phẩm -->
-            <a href="php/cart.php">Giỏ Hàng</a> <!-- Liên kết đến trang giỏ hàng -->
-            <a href="php/login.php">Đăng Nhập</a> <!-- Liên kết đến trang đăng nhập -->
+            <ul>
+                <li><a href="php/index.php">Trang Chủ</a></li>
+                <li><a href="php/products.php">Sản Phẩm</a></li>
+                <li><a href="php/cart.php">Giỏ Hàng</a></li>
+                <li><a href="contact.php">Liên Hệ</a></li>
+            </ul>
         </nav>
+        <h1>Chào Mừng Đến Với Cửa Hàng Của Chúng Tôi</h1>
     </header>
 
     <!-- Main Content -->
     <main>
-        <h2>Sản Phẩm Nổi Bật</h2>
-        <div class="product-grid">
-            <?php
-            // Kết nối cơ sở dữ liệu
-            $result = $conn->query("SELECT * FROM products");
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    echo '<div class="product">
-                            <img src="images/' . $row['image'] . '" alt="' . $row['name'] . '">
-                            <h3>' . $row['name'] . '</h3>
-                            <p>' . $row['price'] . ' VND</p>
-                            <button onclick="addToCart(' . $row['id'] . ')">Thêm Vào Giỏ</button>
-                          </div>';
-                }
-            } else {
-                echo '<p>Không có sản phẩm nào để hiển thị.</p>';
-            }
-            ?>
-        </div>
+        <section id="featured-products">
+            <h2>Sản Phẩm Nổi Bật</h2>
+            <div class="product-list">
+                <!-- Example Product Item -->
+                <div class="product-item">
+                    <img src="images/productA.png" alt="Sản phẩm 1">
+                    <h3>Sản Phẩm 1</h3>
+                    <p>Giá: $19.99</p>
+                    <button class="add-to-cart-button" data-product-id="1">Thêm vào Giỏ</button>
+                </div>
+                <!-- Thêm các sản phẩm khác tương tự -->
+            </div>
+        </section>
+
+        <section id="about-us">
+            <h2>Về Chúng Tôi</h2>
+            <p>Chúng tôi cung cấp những sản phẩm tốt nhất với giá cả hợp lý.</p>
+        </section>
     </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Cửa Hàng Trực Tuyến</p>
+        <p>&copy; 2024 Ecommerce Website. Tất cả các quyền được bảo lưu.</p>
     </footer>
 </body>
 </html>
